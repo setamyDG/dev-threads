@@ -62,9 +62,6 @@ async function Page({ params }: Props) {
               ))}
             </section>
           </TabsContent>
-          <TabsContent value='requests' className='w-full text-light-1'>
-            <ThreadsTab currentUserId={user.id} accountId={communityDetails._id} accountType='Community' />
-          </TabsContent>
         </Tabs>
       </div>
     </section>

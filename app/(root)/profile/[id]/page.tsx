@@ -1,5 +1,6 @@
 import { currentUser } from '@clerk/nextjs';
 import Image from 'next/image';
+import { redirect } from 'next/navigation';
 import ProfileHeader from '@/components/shared/ProfileHeader';
 import ThreadsTab from '@/components/shared/ThreadsTab';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -11,6 +12,10 @@ async function Page({ params }: { params: { id: string } }) {
   if (!user) return null;
 
   const userInfo = await fetchUser(params.id);
+
+  console.log('user', user);
+  console.log('userInfo', userInfo);
+  if (!userInfo.onboarded) redirect('/onboarding');
 
   return (
     <section>
