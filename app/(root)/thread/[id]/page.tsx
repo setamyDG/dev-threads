@@ -20,9 +20,7 @@ const Page = async ({ params }: Props) => {
 
   const userInfo = await fetchUser(user.id as string);
 
-  if (!userInfo.onboarded) {
-    redirect('/onboarding');
-  }
+  if (!userInfo.onboarded) redirect('/onboarding');
 
   const thread = await fetchThreadById(params.id);
 

@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { redirect } from 'next/navigation';
 import ThreadCard from '../cards/ThreadCard';
-import { fetchUserThreads } from '@/lib/actions/user.actions';
+import { fetchCommunityPosts } from '@/lib/actions/community.actions';
+import { fetchUserPosts } from '@/lib/actions/user.actions';
 
 type Props = {
   currentUserId: string;
@@ -9,7 +10,13 @@ type Props = {
   accountType: string;
 };
 const ThreadsTab = async ({ currentUserId, accountId, accountType }: Props) => {
-  const result = await fetchUserThreads(accountId);
+  let result: any;
+
+  if (accountType === 'Community') {
+    result = await fetchCommunityPosts(accountId);
+  } else {
+    result = await fetchUserPosts(accountId);
+  }
 
   if (!result) {
     redirect('/');
