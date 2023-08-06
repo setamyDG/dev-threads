@@ -32,3 +32,16 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+<!--
+  using clerk for auth
+  using tailwincss-animate for animations
+  using tailwindcss for styling
+  using nextjs for routing with Route Groups (auth), (root)
+  using mongoose for database management
+  using eslint & prettier for linting
+  using svix for webhooks
+  using uploadthingy for file uploads
+  using shadcn for ui components
+  using zod for validation & schemas
+ -->
