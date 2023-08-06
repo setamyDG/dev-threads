@@ -11,7 +11,6 @@ export async function createCommunity(
   name: string,
   username: string,
   image: string,
-  bio: string,
   createdById: string, // Change the parameter name to reflect it's an id
 ) {
   try {
@@ -29,7 +28,6 @@ export async function createCommunity(
       name,
       username,
       image,
-      bio,
       createdBy: user._id, // Use the mongoose ID of the user
     });
 
